@@ -1,0 +1,127 @@
+.contact-me{
+  h1{
+    font-weight: 700;
+    font-size: 31px;
+    line-height: 46px;
+    color: #585858;
+    padding-top: 2rem;
+  }
+  .get-in-touch{
+  margin-top: 3rem;
+    h2,span{
+    font-style: normal;
+    font-weight: 700;
+    font-size: 31px;
+    color: #000000;
+    }
+    span{
+      color:#FF424E;
+    }
+  }
+  .contact-details-wrapper{
+    display: flex;
+    align-items: center;
+    .contact-details-icons-wrapper{
+      width: 50%;
+      padding-left: 2rem;
+      .contact-details-social-icons{
+        display: flex;
+        align-items: center;
+        gap: 15px;
+        margin-bottom: 15px;
+        color: #FFFFFF;
+        .icon-background{
+          background-image: url('/assets/img/icons-background.svg');
+          background-repeat: no-repeat;
+          padding: 17px 19px;
+          background-size: 65px;
+        }
+        a,p{
+          color: #3e3b3b;
+          text-decoration: none;
+          &:hover{
+            color: #FF424E;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width:700px){
+  .contact-me{
+    h1{
+      font-size: 25px;
+      padding-top: 0px;
+    }
+    .get-in-touch{
+      margin-top: 0rem;
+      h2,span{
+        font-size: 18px;
+      }
+    }
+    .contact-details-wrapper{
+    align-items:flex-start;
+    flex-direction: column;
+    margin-top: 1rem;
+    .contact-details-icons-wrapper,
+    .contact-details-avatar{
+      width: 100%;
+    }
+    }
+    .contact-details-icons-wrapper{
+      padding-left: 0px!important;
+    }
+    .contact-details-avatar{
+      img{
+        width: 100%;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width:1200px){
+  .contact-details-wrapper{
+    .contact-details-icons-wrapper{
+      padding-left: 0px !important;
+      .contact-details-social-icons{
+
+        a{
+          font-size: 13px !important;
+        }
+      }
+    }
+    .contact-details-avatar{
+      width: 50%;
+      img{
+        width: 100% !important;
+      }
+    }
+  }
+}
+
+@media (max-width:850px){
+.get-in-touch{
+  margin-top: 1rem !important;
+}
+.contact-details-icons-wrapper{
+  margin-top: 2rem;
+  .contact-details-social-icons{
+    .icon-background{
+      padding: 7px 12px !important;
+      background-size: 50px !important;
+    }
+    a{
+      font-size: 13px !important;
+    }
+  }
+}
+
+}

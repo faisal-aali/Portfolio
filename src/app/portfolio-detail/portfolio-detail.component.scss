@@ -1,0 +1,221 @@
+// @import "bootstrap/scss/bootstrap";
+.portfolio-details {
+  margin-top: 1rem;
+  .portfolio-details-heading {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+    margin-bottom: 30px;
+    button {
+      background-color: #FF424E;
+      padding: 12px 15px;
+      border-radius: 50%;
+      outline: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+    }
+    h1 {
+      font-style: normal;
+      font-weight: bold;
+      font-size: 31px;
+      color: #585858;
+    }
+  }
+  .portfolio-details-hero {
+    margin: 0px 0px;
+    width: 100%;
+    height: 45vh;
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+  .portfolio-single-preview-image {
+    margin: 0px 0px;
+    width: 100%;
+    height: 70vh;
+    &.increase-length {
+      height: 100%;
+    }
+    &.change-width {
+      img{
+        aspect-ratio: 6/3;
+      object-fit: contain;
+      }
+    }
+    .image-slider {
+      height: 100%;
+      width: 100%;
+    }
+    .arrow-buttons {
+      position: absolute;
+      top: 50%;
+      opacity: 0;
+      transition: opacity 0.3s;
+      svg {
+        background-color: #FF424E;
+        padding: 12px 15px;
+        border-radius: 50%;
+        outline: none;
+        border: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      &.left-arrow {
+        left: 4%;
+      }
+      &.right-arrow {
+        right: 4%;
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+    }
+    &:hover .arrow-buttons {
+      opacity: 1;
+    }
+  }
+
+  .portfolio-details-images-wrapper {
+    margin-top: 25px;
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    .portfolio-detail-image {
+      flex-basis: 31%;
+      height: 181px;
+      cursor: pointer;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+}
+.scroll-to-top{
+  background: #FF424E;
+  border: none;
+  outline: none;
+  border-radius: 20%;
+  padding: 7px 10px;
+  margin-top: 1rem;
+  cursor: pointer;
+  .fa-arrow-up{
+    color: #fff;
+    font-weight: 600;
+  }
+}
+.custom-modal {
+  position: absolute;
+  top: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100vh;
+  z-index: 999;
+  background: rgba(0, 0, 0, 0.84);
+  .modal-dialog {
+    width: 80%;
+  }
+  .modal-content {
+    background-color: transparent;
+    border: none;
+    .modal-body {
+      img {
+        width: 70%;
+        height: 70vh;
+        margin: auto;
+      }
+      #prev-button {
+        font-size: 0;
+        border: none;
+        background-color: #FF424E;
+        padding: 12px 15px;
+        border-radius: 50%;
+        outline: none;
+        position: absolute;
+        left: 22.5%;
+        top: 45%;
+        background-repeat: no-repeat;
+        background-size: 45px;
+        cursor: pointer;
+      }
+      #next-button {
+        font-size: 0;
+        background-color: #FF424E;
+        padding: 12px 15px;
+        border-radius: 50%;
+        border: none;
+        outline: none;
+        position: absolute;
+        right: 22.5%;
+        top: 45%;
+        background-repeat: no-repeat;
+        background-size: 45px;
+        cursor: pointer;
+        svg{
+          transform: rotate(180deg);
+        }
+      }
+      #cross-button {
+        background-image: url("/assets/img/icon-cross.svg");
+        padding: 11px 11px;
+        font-size: 0;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        background-repeat: no-repeat;
+        top: 11%;
+        position: absolute;
+        right: 22%;
+        cursor: pointer;
+      }
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .portfolio-details {
+    .portfolio-details-hero {
+      height: 20vh;
+    }
+    .portfolio-details-images-wrapper {
+      flex-wrap: nowrap;
+      flex-direction: column;
+    }
+    .portfolio-single-preview-image {
+      height: 46vh;
+      &.change-width {
+      height: 46vh;
+      }
+    }
+  
+  }
+  .modal-content {
+    .modal-body {
+      img {
+        width: 100% !important;
+        height: 35vh !important;
+      }
+    }
+    #cross-button{
+      top: 26% !important;
+      right: 10% !important;
+    }
+    #next-button{
+      right: 10.5% !important;
+      top: 48% !important;
+    }
+    #prev-button{
+      left: 10.5% !important;
+      top: 48% !important;
+    }
+  }
+}

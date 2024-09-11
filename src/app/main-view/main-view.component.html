@@ -1,0 +1,253 @@
+<div class="main">
+  <div class="portfolio-section-bg" id="portfolio-section-bg">
+    <!-- Navigation Menu For Mobile View With Sidebar -->
+    <div class="navbar-mobile">
+          <div class="user-whole-profile-wrapper">
+            <div class="user-profile-wrapper">
+              <div class="user-profile-icon">
+                <img *ngIf="!isOpenProfile" src="assets/img/main-avatar.png" alt="">
+                <i *ngIf="isOpenProfile" class="material-icons">close</i>
+              </div>            
+              <div class="user-profile-title">
+                <div class="user-profile-name">
+                  <span>Faisal Ali</span>
+                </div>
+                <div class="user-profile-role">
+                  <span>Senior UI/UX Designer</span>
+                </div>
+              </div>
+            </div>
+            <div class="user-toggle-menu-wrapper">
+              <div class="active-router">
+                <p>{{activeRoute}}</p>
+              </div>
+              <div class="toggle-menu-button">
+                <button class="menu-button"  (click)="toggleSidebar()">
+                  <i class="material-icons">{{ isOpen ? "close" : "menu" }}</i>
+                </button>
+              </div>
+            </div>
+          </div>
+          <div class="sidebar-mobile" [ngClass]="{ 'open': isOpen, 'opened-sidebar': isOpen }">
+            <div class="menu-type">
+              <span>MENU</span>
+            </div>
+            <div class="mobile-navigation-menu">
+              <div class="user-profile-detail-navbar">
+                <ul class="user-profile-detail-nav-links">
+                  <li>
+                    <a routerLink="about" (click)="toggleSidebar()" [routerLinkActive]="'active'">About</a>
+                  </li>
+                  <li>
+                    <a routerLink="resume" (click)="toggleSidebar()" [routerLinkActive]="'active'">Resume</a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()"
+                      routerLink="UI/UX"
+                      [ngClass]="{ active: isPortfolioActive() }"
+                    >
+                      Portfolio
+                    </a>
+                  </li>
+                  <li>
+                    <a (click)="toggleSidebar()" routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+            <div class="sidebar-footer" style="display: none;">
+              <div class="social-icons" [ngClass]="{'open': isOpen}">
+                <a
+                  href="https://www.linkedin.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a
+                  href="https://www.facebook.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a
+                  href="https://twitter.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  <i class="fab fa-twitter"></i>
+                </a>
+              </div>
+            </div>
+          </div>
+    </div>
+    <!-- Navigation Menu For Desktop View-->
+    <div class="navigation-menu">
+      <div class="user-profile-detail-navbar">
+        <ul class="user-profile-detail-nav-links">
+          <li>
+            <a routerLink="about" [routerLinkActive]="'active'">About</a>
+          </li>
+          <li>
+            <a routerLink="resume" [routerLinkActive]="'active'">Resume</a>
+          </li>
+          <li>
+            <a routerLink="UI/UX" [ngClass]="{'active': isPortfolioActive() }">
+              Portfolio
+            </a>
+          </li>
+          <li>
+            <a routerLink="contact" [routerLinkActive]="'active'">Contact</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    <!-- Floading Circles Shapes on background -->
+    <div class="card">
+      <div class="circle"></div>
+      <div class="circle"></div>
+    </div>
+    <!-- Check if the active route is equal to about -->
+    <div *ngIf="activeRoute === 'about' && isDesktop" class="porfolio-about-section-wrapper">
+      <div class="porfolio-section-list" id="porfolio-section-list">
+        <div class="profile-content">
+          <div class="about-me">
+            <div class="image">
+              <img src="assets/img/pointer.png" alt="" />
+            </div>
+            <div class="content">
+              <div class="content-wrapper">
+                <h2>Hey there! <span>I’m Faisal</span></h2>
+                <div class="role">
+                  <span>Senior UI/UX Designer</span>
+                </div>
+                <div class="paragrapgh">
+                  <p class="para1">
+                    Faisal Ali is a highly skilled graphic designer with a strong background in UI/UX design. With 9 years of experience in the industry, Faisal has honed his abilities in creating visually stunning graphics while ensuring optimal user experiences.
+                  </p>
+
+                  <p class="para2">
+                    Proficient in design software like Adobe Creative Suite and skilled in wireframing, prototyping, and usability testing, Faisal has successfully developed cohesive designs that seamlessly blend aesthetics and functionality. With a keen eye for detail and a deep understanding of user-centered design principles, Faisal consistently delivers designs that captivate users and exceed client expectations.
+                  </p>
+                </div>
+                <div class="buttons">
+                  <a
+                  href="/assets/cv/Faisal-Ali-UX-Expert.pdf"
+                  download="Faisal-Ali-UX-Expert.pdf" style="color: #fff; text-decoration: none;"
+                >
+                  <div class="visit-portfolio-btn">
+                    <img src="assets/img/portfolio-icon.png" />
+                    <span>Download Resume</span>
+                  </div>
+                  </a>
+                  <div routerLink="/UI/UX" class="visit-portfolio-btn">
+                    <img src="assets/img/portfolio-icon.png" />
+                    <span>Visit My Portfolio</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="second-image">
+              <img src="assets/img/contact-avatar.png" alt="" />
+            </div>
+          </div>
+        </div>
+        <div class="porfolio-section-detail" id="porfolio-section-detail">
+          <div class="portfolio-about-user-left overflow">
+            <div class="about-user-left-whole-wrapper">
+              <div class="user-profile-list-info">
+                <div class="user-profile-info-wrapper">
+                  <span class="city">state:</span>
+                  <span class="state">texas</span>
+                </div>
+                <div class="user-profile-info-wrapper">
+                  <span class="city">City:</span>
+                  <span class="state">dallas</span>
+                </div>
+                <div class="user-profile-info-wrapper">
+                  <span class="city">Language:</span>
+                  <span class="state">English</span>
+                </div>
+              </div>
+              <div class="skills-heading">
+                <h4>Skills</h4>
+              </div>
+              <div class="user-profile-skills-wrapper">
+                <div class="skills-row">
+                  <span>SEO/SEM</span>
+                </div>
+                <div class="skills-row">
+                  <span>jquery</span>
+                </div>
+                <div class="skills-row">
+                  <span>salesforce</span>
+                </div>
+                <div class="skills-row">
+                  <span>html/css</span>
+                </div>
+                <div class="skills-row">
+                  <span>cms/crm</span>
+                </div>
+                <div class="skills-row">
+                  <span>wordpress/joomla</span>
+                </div>
+              </div>
+              <div class="skills-heading">
+                <h4>Tools</h4>
+              </div>
+              <div class="user-profile-skills-wrapper">
+                <div class="skills-row">
+                  <span>Figma</span>
+                </div>
+                <div class="skills-row">
+                  <span>Sketch</span>
+                </div>
+                <div class="skills-row">
+                  <span>Adobe xd</span>
+                </div>
+                <div class="skills-row">
+                  <span>Invision app</span>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="right">
+            <div class="content-wrapper">
+              <div class="heading">
+                <h4>My Design Process</h4>
+              </div>
+              <img src="assets/img/design-process.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- Check if the active route is not equal to about to display other pages-->
+    <div *ngIf="activeRoute !== 'about' && isDesktop"
+      class="porfolio-section-wrapper"
+      id="porfolio-section-wrapper"
+    >
+      <div class="porfolio-section-list" id="porfolio-section-list">
+        <app-profile></app-profile>
+        <app-profile-list></app-profile-list>
+      </div>
+      <div class="porfolio-section-detail" id="porfolio-section-detail">
+        <app-profile-detail></app-profile-detail>
+      </div>
+    </div>
+    <!-- Check for the mobile view-->
+    <div *ngIf="!isDesktop"
+    class="porfolio-section-wrapper"
+    id="porfolio-section-wrapper"
+  >
+    <div class="porfolio-section-list" id="porfolio-section-list">
+      <app-profile></app-profile>
+      <app-profile-list></app-profile-list>
+    </div>
+    <div class="porfolio-section-detail" id="porfolio-section-detail">
+      <app-profile-detail></app-profile-detail>
+    </div>
+    </div>
+  </div>
+</div>
